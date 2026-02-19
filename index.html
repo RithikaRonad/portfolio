@@ -60,43 +60,71 @@
 /* Animation styles */
 #typing-animation {
   position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-weight: 500;
+  color: #ffbd39;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
-
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
+  border-right: 2px solid #ffbd39;
+  animation: typing 3.5s steps(30, end) infinite,
+             blink-caret .75s step-end infinite;
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0 }
+  to { width: 100% }
 }
 
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #ffbd39 }
 }
 
+/* Professional hover effects */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffbd39;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+/* Enhanced project cards */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Professional section transitions */
+.ftco-animate {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ftco-animate.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
 /* project image zoom effect */
 
@@ -160,7 +188,10 @@
 
 						// Create an array of typing text
 						const typingTexts = [
-						'Software Developer',
+						'Software Engineer',
+						'Cloud & SaaS Engineer',
+						'LimeSurvey Platform Specialist',
+						'Full-Stack & DevOps Engineer'
 						];
 
 						// Create a function to display the typing animation for a given text
@@ -245,7 +276,7 @@
 								<h2 class="mb-4">About Me</h2>
 								
 								<br>
-									<p style="text-align: justify">I'm a passionate software engineer with a Master's in Computer Engineering from the University of Texas at Arlington. Currently interning at Explore Digits Inc., I am gaining hands-on experience developing and managing dynamic survey platforms, automating workflows with JavaScript and AWS, and collaborating with teams to ensure seamless deployment. I’ve worked on impactful projects like expense trackers and service request systems, showcasing my skills in React.js, Node.js, and MongoDB. With certifications in cloud computing and front-end development, I enjoy building robust applications, solving real-world problems, and continuously expanding my technical expertise.</p>
+									<p style="text-align: justify">I’m a Software Engineer who builds cloud-based SaaS products that turn complex data into simple, reliable user experiences. Over the past year, I’ve worked on production systems in healthcare and research, designing secure survey platforms, AWS-powered workflows, and analytics dashboards used by real customers every day. I specialize in building and managing end-to-end products, especially survey and data systems using LimeSurvey, AWS services, and full-stack technologies — from system setup to deployment and continuous improvements. I enjoy working across engineering, product, and users to understand real needs and transform them into scalable solutions, with a strong focus on building secure, high-quality, and easy-to-use systems that genuinely help people.</p>
 									<ul class="about-info mt-4 px-md-0 px-2"></ul>
 									
 								</ul>
@@ -280,10 +311,12 @@
 						<span class="date">Technical - Skills</span>
 						
 							<ul>
-								<li><b>Languages </b> - JavaScript, TypeScript, Java, Python, R, C </li>
-								<li><b>Web & Frameworks </b>- React.js, Node.js, HTML, CSS, Flask, Django, Express </li>
-								<li><b>Development & Cloud </b> - Docker, Git, AWS, MongoDB, Vercel, Apache Spark, Hadoop, Jira </li>
-								<li><b>Testing & Quality Assurance </b> - CI/CD, Agile Methodologies, Automated Testing, Manual Testing </li>
+								<li><b>Programming Languages </b> - JavaScript, TypeScript, Java, Python </li>
+								<li><b>Frontend & Backend </b>- React, Node.js, HTML, CSS, Express </li>
+								<li><b>Cloud & AWS Services </b> - Cognito, SES, S3, IAM, CloudWatch </li>
+								<li><b>Survey & Data Platforms </b> - LimeSurvey (SSA), SurveyMonkey, Qualtrics </li>
+								<li><b>Data & Analytics</b> - Amazon QuickSight, SQL, MongoDB</li>
+								<li><b>DevOps & Tooling</b> - Docker, Git, CI/CD, Jira, Confluence</li>
 							</ul>
 						</p>
 					</div>
@@ -292,17 +325,18 @@
 
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate">
-						<span class="date">Soft - Skills</span>
+						<span class="date">Core Strengths</span>
 						
 							<ul>
 								
 								<!-- 
 								 -->
-								<li>Strong problem-solving abilities with a focus on efficiency.</li>
-								<li>Excellent teamwork and collaboration in diverse environments.</li>
-								<li>Clear and effective communication skills.</li>
-								<li>Quick learner with a growth mindset.</li>
-								<li>Adaptable to new challenges and technologies.</li>
+								<li>Building production-ready cloud-based SaaS platforms</li>
+								<li>Designing secure AWS-powered workflows and systems</li>
+								<li>Creating survey automation and data pipelines</li>
+								<li>Turning raw data into dashboards and actionable insights</li>
+								<li>End-to-end product ownership from setup to deployment</li>
+								<li>Ensuring quality through testing and improvements</li>
 							</ul>
 						</p>
 					</div>
@@ -317,8 +351,8 @@
 				<h1 class="big big-2">Experience</h1>
 			  <h2 class="mb-4">Experience</h2>
 
-		<p></p>
-			<div class="row"style="margin-top:70px;">
+		<!-- <p></p>
+			<div class="row"style="margin-top:70px;"> -->
     			<!-- <div class="col-md-6">
     				<div class="resume-wrap ftco-animate">
     					<span class="date">Aug'22 – May'24</span>
@@ -329,21 +363,35 @@
     				</div> -->
 						<!--  -->
 
-						<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">Explore Digits Inc</span>
-    					<h1>Software Engineer Intern</h1>
-    					<!-- <span class="position">Gaithersburg, MD </span> -->
-    					<p class="mt-4"> September 2024– Present </p>
-							<ul>
-						<li style="text-align: justify">Manage and develop 20+ surveys in LimeSurvey with advanced features like dynamic logic and branching.</li>
-						<li>Automate PDF generation using JavaScript and jsPDF for efficient workflows in medical research.</li>
-						<li>Conduct QA testing across environments to ensure accuracy and seamless client deployments.</li>
-						<li>Design email templates integrated with AWS Cognito and Amazon SES for improved communication.</li>
-						<li>Lead client demos and training sessions to support collaboration.</li>
-						</ul>
-    				</div>
-    			</div>
+					<!-- <div class="col-md-6">
+  <div class="resume-wrap ftco-animate" style="text-align:left;">
+
+    <span class="date">Explore Digits Inc</span> -->
+
+    <!-- Full Time -->
+    <!-- <h1 style="margin-top:20px;">Junior Software Engineer</h1>
+    <p>February 2025 – Present</p>
+
+    <ul style="padding-left:18px;">
+      <li>Led delivery of 3 live enterprise SaaS projects from setup to production launch</li>
+      <li>Owned end-to-end development — survey systems, cloud workflows, dashboards</li>
+      <li>Served as Product Owner/PMO driving requirements and sprint execution</li>
+    </ul> -->
+
+    <!-- Internship -->
+    <!-- <h1 style="margin-top:35px;">Software Engineer Intern</h1>
+    <p>September 2024 – January 2025</p>
+
+    <ul style="padding-left:18px;">
+      <li>Built complex LimeSurvey workflows with automation and branching logic</li>
+      <li>Automated PDF reporting and email workflows using JavaScript</li>
+    </ul>
+
+  </div>
+</div> -->
+
+
+
 
     			<!-- <div class="col-md-6">
     				<div class="resume-wrap ftco-animate">
@@ -356,11 +404,10 @@
 				</div> -->
 							<!--  -->
 
-				<div class="col-md-6">
+				<!-- <div class="col-md-6">
     				<div class="resume-wrap ftco-animate">
     					<span class="date">Sugarcane Research Unit</span>
     					<h1>Data Annotation Research Assistant</h1>
-    					<!-- <span class="position"> Data Annotation Research Assistant</span> -->
     					<p class="mt-4">July 2024– September 2024</p>
 						<ul>
 							<li>Annotated over 1,000 root images using Roboflow to build a high-quality research dataset, ensuring accuracy, consistency, and alignment with project requirements.</li>
@@ -370,7 +417,128 @@
 						</ul>
     				</div>
 				</div>
-    		</div>
+    		</div> -->
+
+				<!-- <div class="col-md-6">
+  <div class="resume-wrap ftco-animate" style="text-align:left;">
+
+    <span class="date">Sugarcane Research Unit</span>
+    <h1>Data Annotation Research Assistant</h1>
+    <p class="mt-4">July 2024 – September 2024</p>
+
+    <ul style="padding-left:18px;">
+      <li>Annotated over 1,000 root images using Roboflow to build a high-quality research dataset with high accuracy and consistency</li>
+      <li>Improved annotation workflows to reduce manual effort and increase efficiency based on researcher feedback</li>
+      <li>Collaborated with researchers to refine guidelines and enhance overall data quality</li>
+    </ul>
+
+  </div>
+</div> -->
+
+<!-- ROW 1 — FULL TIME + INTERNSHIP -->
+<div class="row" style="margin-top:70px;">
+
+  <!-- Full Time -->
+  <div class="col-md-6">
+    <div class="resume-wrap ftco-animate" style="text-align:left; height:100%;">
+
+      <span class="date">Explore Digits Inc</span>
+      <h1>Junior Software Engineer</h1>
+      <p>February 2025 – Present</p>
+
+      <ul style="padding-left:18px;">
+        <li>Led delivery of 3 live enterprise SaaS projects</li>
+        <li>Owned end-to-end development — surveys, cloud workflows, dashboards</li>
+        <li>Served as Product Owner/PMO driving sprint execution</li>
+        <li>Built secure onboarding with AWS services</li>
+        <li>Ensured production quality and monitoring</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Internship -->
+  <div class="col-md-6">
+    <div class="resume-wrap ftco-animate" style="text-align:left; height:100%;">
+
+      <span class="date">Explore Digits Inc</span>
+      <h1>Software Engineer Intern</h1>
+      <p>September 2024 – January 2025</p>
+
+      <ul style="padding-left:18px;">
+        <li>Built complex LimeSurvey workflows</li>
+        <li>Automated PDF reporting & email workflows</li>
+        <li>Performed QA testing and documentation</li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ROW 2 — UNIVERSITY FULL WIDTH -->
+<!-- <div class="row" style="margin-top:30px;">
+
+  <div class="col-md-12">
+    <div class="resume-wrap ftco-animate" style="text-align:left;">
+
+      <span class="date">University of Texas Arlington</span>
+      <h1>Data Annotation Research Assistant</h1>
+      <p>July 2024 – September 2024</p>
+
+      <ul style="padding-left:18px;">
+        <li>Annotated 1,000+ research images using Roboflow</li>
+        <li>Improved workflows to increase efficiency</li>
+        <li>Collaborated with researchers to refine data quality</li>
+      </ul>
+
+    </div>
+  </div>
+
+</div> -->
+<!-- <div class="row" style="margin-top:30px;">
+
+ <div class="col-md-12">
+    <div class="resume-wrap ftco-animate"
+         style="text-align:left; display:block; width:100%; max-width:none;">
+
+      <span class="date">University of Texas Arlington</span>
+      <h1>Data Annotation Research Assistant</h1>
+      <p>July 2024 – September 2024</p>
+
+      <ul style="padding-left:18px;">
+        <li>Annotated 1,000+ research images using Roboflow</li>
+        <li>Improved workflows to increase efficiency</li>
+        <li>Collaborated with researchers to refine data quality</li>
+      </ul>
+
+    </div>
+  </div>
+
+</div> -->
+
+<div class="row" style="margin-top:30px; justify-content:center;">
+
+  <div class="col-md-8">
+    <div class="resume-wrap ftco-animate" style="text-align:left;">
+
+      <span class="date">University of Texas Arlington</span>
+      <h1>Data Annotation Research Assistant</h1>
+      <p>July 2024 – September 2024</p>
+
+      <ul style="padding-left:18px;">
+        <li>Annotated 1,000+ research images using Roboflow</li>
+        <li>Improved workflows to increase efficiency</li>
+        <li>Collaborated with researchers to refine data quality</li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+
+
 
     		<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
@@ -394,12 +562,14 @@
         <div class="row d-flex">
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/RithikaRonad906" class="block-20 zoom-effect" style="background-image: url('images/proj_7.jpg');">
+              <a href="https://rithikaronad906.github.io/calculator-/" class="block-20 zoom-effect" style="background-image: url('images/proj_5.png');">
               </a>
               <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="https://github.com/RithikaRonad906">Expense Tracker Application</a></h3>
-                <p style="text-align: justify">Built an expense tracker with category analysis, date filters, and transaction stats. Integrated secure authentication and deployed on Vercel for seamless performance.</p>
+                <h3 class="heading"><a href="https://rithikaronad906.github.io/calculator-/">Calculator</a></h3>
+                <p style="text-align: justify">Designed and developed an interactive calculator using HTML, CSS, and JavaScript. Enabled 
+					users to perform basic arithmetic operations with real-time feedback, showcasing proficiency 
+					in front-end development and user interface design.</p>
               </div>
             </div>
           </div>
@@ -428,7 +598,7 @@
         </div>
 	<br>
 		<!-- added justify-content-center to center align the last two projects -->
-		<div class="row d-flex justify-content-center">  
+		<!-- <div class="row d-flex justify-content-center">  
 			<div class="col-md-4 d-flex ftco-animate">
 				<div class="blog-entry justify-content-end">
 				<a href="https://github.com/RithikaRonad906/Longest-Common-Subsequence-Solver" class="block-20 zoom-effect" style="background-image: url('images/proj_4.png');">
@@ -466,7 +636,7 @@
 			  </div>
 			</div>
 		 </div>
-	  </div>
+	  </div> -->
     </section>
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
